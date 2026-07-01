@@ -55,21 +55,22 @@ if (tasks.length > 0){
      newLabel.innerText = element.taskName;
      taskDiv.classList.add("count");
      taskDiv.classList.add("countProg");
-     let countTask = document.querySelectorAll(".count");
-     let inProgressTask = document.querySelectorAll(".countProg");
-     task.innerText = countTask.length
-     inProgress.innerText = inProgressTask.length
      taskDiv.id = element.id;
      if(newInp.checked === true){
         taskDiv.classList.add("completedTask");
         taskDiv.classList.remove("addedTask");
         taskDiv.classList.remove("countProg");
         newLabel.classList.add("textDeco")
+        let countTask = document.querySelectorAll(".count");
+        task.innerText = countTask.length;
+        updateStats();
      }else{
         taskDiv.classList.remove("completedTask");
         taskDiv.classList.add("addedTask");
         taskDiv.classList.add("countProg");
         newLabel.classList.remove("textDeco");
+        let countTask = document.querySelectorAll(".count");
+        task.innerText = countTask.length
         updateStats();
      }
 
